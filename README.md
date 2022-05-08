@@ -1,4 +1,4 @@
-# Share4Care
+# Helping Hands
 A donation website 
 
 
