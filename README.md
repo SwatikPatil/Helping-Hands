@@ -1,8 +1,6 @@
 # Share4Care
 A donation website 
 
-Team TRY-ANGLE (id 39)
-Cicada Hackathon
 
 There is a considerable problem of food and unused items being wasted in our country.This website will let people donate items they want and those in need can get these items.
 
