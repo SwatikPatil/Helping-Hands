@@ -1,0 +1,85 @@
+<nav id="mainNav" class="nav navbar navbar-expand-md navbar-dark py-0 fixed-top p_nav">
+        <a href="/" class="navbar-brand">
+            <img src="/stylesheets/images/icons/donation.png" alt="Share4Care" class="p_mainlogo">
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar" >
+          <span class="navbar-toggler-icon">
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <% if(!currentUser) { %>
+                        <li class="nav-item">
+                            <a href="/users/login" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/users/register" class="nav-link">Register</a>
+                        </li>
+                    <% } else {%>
+                        <li class="nav-item">
+                            <a href="/donate" class="nav-link">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/get" class="nav-link">Request</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/users/logout" class="nav-link">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/profile" class="nav-link"><%=currentUser.name%></a>
+                        </li>
+                    <% } %>
+          </ul>
+        </div>
+      </nav>
+      
+    
+      <section style="background-color: #328CC1;" class="dashboard_div">
+        <br>
+        <br>
+        <br>
+        <div class="container p-5" style="background-image: url('/stylesheets/images/dashboard.jpg');background-size:cover;background-blend-mode: lighten;background-repeat: no-repeat;";>
+                    <div class="row">
+                        <div class="col-6" >
+                            <% if(result){ %>
+                                <table class="table table-borderless" style="background-color: rgb(243, 245, 247,0.8);">
+                                        <thead style="background-color: rgba(1, 12, 24, 0.3);">
+                                            <tr>
+                                            <th scope="col">Objects</th>
+                                            <th scope="col">Quantity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <th><i class="fas fa-book"></i>  Books</td>
+                                            <td id="book"><%= result.books %></td>                                        
+                                            </tr>
+                                            <tr>                                        
+                                            <th><img src="/stylesheets/images/icons/sweater_icon.png" alt="" class="img-fluid d-none d-md-inline"> Clothes</td>
+                                            <td id="clothes"><%= result.clothes %></td>                                        
+                                            </tr>
+                                            <tr>
+                                            <th><img src="/stylesheets/images/icons/pencil.png" alt="" class="img-fluid d-none d-md-inline"> Stationary</th>
+                                            <td id="stationary"><%= result.stationary %></td>
+                                            </tr>
+                                            <tr>
+                                            <th><img src="/stylesheets/images/icons/coins.png" alt="" class="img-fluid d-none d-md-inline"> Money</th>
+                                            <td id="money"><%= result.money %></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>   
+                            <% } else { %>
+                                <div class="alert alert-warning" role="alert">
+                                        <img src="/stylesheets/images/icons/crying.png" alt="" class="img-fluid d-none d-md-inline"> No donations made till now
+                                </div>
+                            <% } %>            
+                        </div>
+                        <div class="col-6 ">
+                            <div id="chartContainer" style="height: 400px; width: 100%; background-color: rgb(243, 245, 247,0.8);"></div>
+                        </div>
+                    </div>
+            </div>
+        </section>

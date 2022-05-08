@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/stylesheets/css/app.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link href="/stylesheets/images/icons/donation.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/stylesheets/css/custom.css">
+    <title>Share4Care</title>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript">
+      
+    window.onload = function(){
+      var book = document.getElementById('book').textContent;
+      var clothes = document.getElementById('clothes').textContent;
+      var stationary = document.getElementById('stationary').textContent;
+      var money = document.getElementById('money').textContent;
+      var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light2",
+        backgroundColor: "transparent",
+        animationEnabled: true,
+        animationDuration: 2000,
+        title:{
+          text: "Things our platform has"              
+        },
+        data: [              
+          {
+            type: "column",
+            dataPoints: [
+              { label: "Books",  y: parseInt(book)  },
+              { label: "Clothes", y: parseInt(clothes)  },
+              { label: "Stationary", y: parseInt(stationary)  },
+              { label: "Money", y: parseInt(money) }
+            ]
+          }
+        ]
+      });
+      chart.render();
+    }
+    </script>
+</head>
+<body>
+    <%- body %>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous" ></script>
+    <script>
+      $(function(){
+        $(document).scroll(function(){
+          var $nav = $("#mainNav");
+          $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+        })
+      })
+    </script>
+</body>
+</html>

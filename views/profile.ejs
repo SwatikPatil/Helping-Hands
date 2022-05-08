@@ -1,0 +1,120 @@
+<nav id="mainNav" class="nav navbar navbar-expand-md navbar-dark py-0 fixed-top p_nav">
+    <a href="/" class="navbar-brand">
+        <img src="/stylesheets/images/icons/donation.png" alt="Share4Care" class="p_mainlogo">
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar" >
+      <span class="navbar-toggler-icon">
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <% if(!currentUser) { %>
+                    <li class="nav-item">
+                        <a href="/users/login" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/users/register" class="nav-link">Register</a>
+                    </li>
+                <% } else {%>
+                    <li class="nav-item">
+                        <a href="/donate" class="nav-link">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/get" class="nav-link">Request</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/users/logout" class="nav-link">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/profile" class="nav-link"><%=currentUser.name%></a>
+                    </li>
+                <% } %>
+      </ul>
+    </div>
+  </nav>
+
+<section>
+    <div class="container p-3">
+        <h2>Welcome <%= currentUser.name %></h2>
+        <div class="alert alert-primary" role="alert">
+            You are doing great by donating on our platform
+        </div>
+        <div class="row">
+            <div class="col-md-6 p-3">
+                <h3><img src="/stylesheets/images/icons/donation1.png" alt="" class="img-fluid d-none d-md-inline" style="height:90px;"> Donations </h3>
+                <p class="lead">Donations you have made till now</p>
+                <% if(typeof userdonations != 'undefined'){ %>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                            <th scope="col">Objects</th>
+                            <th scope="col">Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th><i class="fas fa-book"></i>  Books</td>
+                            <td id="book"><%= userdonations.books %></td>                                        
+                            </tr>
+                            <tr>                                        
+                            <th><img src="/stylesheets/images/icons/sweater_icon.png" alt="" class="img-fluid d-none d-md-inline"> Clothes</td>
+                            <td id="clothes"><%= userdonations.clothes %></td>                                        
+                            </tr>
+                            <tr>
+                            <th><img src="/stylesheets/images/icons/pencil.png" alt="" class="img-fluid d-none d-md-inline"> Stationary</th>
+                            <td id="stationary"><%= userdonations.stationary %></td>
+                            </tr>
+                            <tr>
+                            <th><img src="/stylesheets/images/icons/coins.png" alt="" class="img-fluid d-none d-md-inline"> Money</th>
+                            <td id="money"><%= userdonations.money %></td>
+                            </tr>
+                        </tbody>
+                    </table>    
+                <% } else { %>
+                    <div class="alert alert-warning" role="alert">
+                        <img src="/stylesheets/images/icons/crying.png" alt="" class="img-fluid d-none d-md-inline"> You have not made any donations
+                    </div>
+                <% } %>
+            </div>
+            <div class="col-md-6 p-3">
+                <h3><img src="/stylesheets/images/icons/hand.png" alt="" class="img-fluid d-none d-md-inline" style="height:85px;"> Requests </h3>
+                <p class="lead mt-2">Requests you have made till now</p>
+                <% if(typeof userRequests != 'undefined'){ %>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                            <th scope="col">Objects</th>
+                            <th scope="col">Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th><i class="fas fa-book"></i>  Books</td>
+                            <td id="book"><%= userRequests.books %></td>                                        
+                            </tr>
+                            <tr>                                        
+                            <th><img src="/stylesheets/images/icons/sweater_icon.png" alt="" class="img-fluid d-none d-md-inline"> Clothes</td>
+                            <td id="clothes"><%= userRequests.clothes %></td>                                        
+                            </tr>
+                            <tr>
+                            <th><img src="/stylesheets/images/icons/pencil.png" alt="" class="img-fluid d-none d-md-inline"> Stationary</th>
+                            <td id="stationary"><%= userRequests.stationary %></td>
+                            </tr>
+                            <tr>
+                            <th><img src="/stylesheets/images/icons/coins.png" alt="" class="img-fluid d-none d-md-inline"> Money</th>
+                            <td id="money"><%= userRequests.money %></td>
+                            </tr>
+                        </tbody>
+                    </table>    
+                <% } else { %>
+                    <div class="alert alert-warning" role="alert">
+                        <img src="/stylesheets/images/icons/crying.png" alt="" class="img-fluid d-none d-md-inline"> You have not made any requests
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>

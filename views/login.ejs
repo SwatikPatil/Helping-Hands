@@ -1,0 +1,77 @@
+<body class="a_bg">
+<nav id="mainNav" class="nav navbar navbar-expand-md navbar-dark py-0 fixed-top p_nav">
+        <a href="/" class="navbar-brand">
+          <img src="/stylesheets/images/icons/donation.png" alt="Share4Care" class="p_mainlogo">
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar" >
+          <span class="navbar-toggler-icon">
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a href="/" class="nav-link">Home</a>
+              </li>
+              <% if(!currentUser) { %>
+                  <li class="nav-item">
+                      <a href="/users/login" class="nav-link">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/users/register" class="nav-link">Register</a>
+                  </li>
+              <% } else {%>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Donate</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Request</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/users/logout" class="nav-link">Logout</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/profile" class="nav-link"><%=currentUser.name%></a>
+                  </li>
+              <% } %>
+          </ul>
+        </div>
+      </nav>
+<br>
+<div class="row">
+        <div class="col-md-4 m-auto">
+          <div class="card card-body a_card">
+            <h1 class="text-center mb-3 a_frm">
+                Login</h1>
+            <% include ./partials/messages %>
+            <form action="/users/login" method="POST">
+              <div class="form-group">
+                <label for="email" class="a_frm">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Enter Email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password" class="a_frm">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Enter Password"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary btn-block a_frm"  style="background-color: #D9B310;border: none;">Login</button>
+            </form>
+            <p class="lead mt-4 a_frm">
+              No Account? <a href="/users/register" class="a_frm a_hov">Register</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      

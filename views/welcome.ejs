@@ -1,0 +1,233 @@
+<nav id="mainNav" class="nav navbar navbar-expand-md navbar-dark py-0 fixed-top p_nav">
+    <a href="/" class="navbar-brand">
+        <img src="/stylesheets/images/icons/donation.png" alt="Share4Care" class="p_mainlogo" title="Share4Care">
+        <!-- <h3 class="mb-0">Share4Care</h3> -->
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar" >
+        <span class="navbar-toggler-icon">
+        </span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a href="/" class="nav-link">Home</a>
+        </li>
+        <% if(!currentUser) { %>
+            <li class="nav-item">
+                <a href="/users/login" class="nav-link">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="/users/register" class="nav-link">Register</a>
+            </li>
+        <% } else {%>
+            <li class="nav-item">
+                <a href="/donate" class="nav-link">Donate</a>
+            </li>
+            <li class="nav-item">
+                <a href="/get" class="nav-link">Request</a>
+            </li>
+            <li class="nav-item">
+                <a href="/users/logout" class="nav-link">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a href="/profile" class="nav-link"><%=currentUser.name%></a>
+            </li>
+        <% } %>
+        </ul>
+    </div>
+</nav>
+
+    <section id="showcase" class="d-flex justify-content-center align-items-center">
+        <div id="overlay"></div>
+            <div id="header" class="container text-white text-center">
+              <h1 class="display-1 p_display">Share4Care</h3>
+                <div class="lead d-none d-md-block"></div>
+                <div class="container">
+                  <a id="book" class="btn btn-primary px-5" href="/dashboard" role="button">DASHBOARD</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container text-center mt-5">
+            <h1 class="dark-blue bold">Things to Donate</h1>
+            <div class="row things">
+            <div class="col-md-4 p-3">
+                <img src="/stylesheets/images/icons/books.png" alt="Books" title="Books" class="img-fluid d-none d-md-inline">
+                <h3>Books</h3>
+                <p class="lead">Have you read your books already and think that you no longer need them! Then, this is the opportunity to help other people who are keen to read those books! 
+                </p>
+            </div>
+            <div class="col-md-4 p-3">
+                <img src="/stylesheets/images/icons/clothes.png" alt="Clothes" title="Clothes" class="img-fluid d-none d-md-inline">
+                <h3>Clothes</h3>
+                <p class="lead">Do you have clothes that you no longer need!Help other people by donating your unused clothes!</p>
+            </div>
+            <div class="col-md-4 p-3">
+                <img src="/stylesheets/images/icons/stationary.png" alt="Stationary" title="Stationary" class="img-fluid d-none d-md-inline">
+                <h3>Stationary</h3>
+                <p class="lead">Do you have some extra,unused stationery! Help others by donating the exta stationery!</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid text-center mt-2 p-3 moments">
+            <h1 class="moments_title">Happy Moments</h1>
+            <div class="row m-2">
+            <div class="col-md-4 p-3">
+                <div class="card p_card">
+                    <img src="/stylesheets/images/1.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">SIMPLE LIVES</h2>
+                        <p class="card-text">One of the best things in life is seeing a smile on a person's face and knowing that you put it there!Sometimes I get five orders.</p>
+                        <a href="/detail" class="btn btn-lg btn-outline-primary">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card p_card">
+                    <img src="/stylesheets/images/2.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
+                    <h2 class="card-title text-primary">HAPPY FACES</h2>
+                    <p class="card-text">Make someone smile whenever you can, you never know how much you could be making in their life at that moment!</p>
+                    <a href="/detail" class="btn btn-lg btn-outline-primary">Click Here</a>
+                    </div>
+                </div>
+                </div>
+            <div class="col-md-4 p-3">
+                <div class="card p_card">
+                    <img src="/stylesheets/images/gal3.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
+                    <h2 class="card-title text-primary">REAL SMILES</h2>
+                    <p class="card-text">Be the reason someone smiles.Be the reason someone feels loved and believes in the goodness in people.</p>
+                    <a href="/detail" class="btn btn-lg btn-outline-primary">Click Here</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>   
+                  
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+            <div class="col-lg-7 mb-3">
+                <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="/stylesheets/images/carousel/1.jpg" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/stylesheets/images/carousel/2.jpg" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/stylesheets/images/carousel/3.jpg" alt="" class="d-block w-100">
+                    </div>
+                </div>
+                <a href="#mainCarousel" class="carousel-control-prev" data-slide="prev" role="button">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a href="#mainCarousel" class="carousel-control-next" data-slide="next" role="button">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <h3 class="bold blue">Day with them ...</h3>
+                <p class="lead"><b>If you want happiness for a lifetime, help somebody.” For centuries, the greatest thinkers have suggested the same thing: Happiness is found in helping others.</b></p>
+                <p class="lead">One of the most important secrets of life that will be more contented is the act of gratitude and being grateful for the things you have in your life. It is so natural to get caught on the continually needing more prepare, that we don't stop to welcome the things that we have now.<br/><i>Adam Green, Greatest Life Lessons</i></p>
+            </div>
+            </div>
+            </div>
+        </section>    
+                          
+        <section>
+            <div class="container text-center mt-5">
+                <h3 class="bold dark-blue">Memories</h3>
+                <h5 class="text-primary">#Share4Care</h5>
+                <div class="row mt-4">
+                <div class="col-6 col-lg-3 mb-4">
+                    <img src="/stylesheets/images/gal1.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-6 col-lg-3 mb-4">
+                    <img src="/stylesheets/images/gal2.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-6 col-lg-3 mb-4">
+                    <img src="/stylesheets/images/gal3.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-6 col-lg-3 mb-4">
+                    <img src="/stylesheets/images/gal4.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-6 col-lg-3 mb-4">
+                    <img src="/stylesheets/images/gal5.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-6 col-lg-3 mb-4">
+                    <img src="/stylesheets/images/gal6.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-6 col-lg-3 mb-4">
+                    <img src="/stylesheets/images/gal7.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-6 col-lg-3 mb-4">
+                    <img src="/stylesheets/images/gal8.jpg" alt="" class="img-fluid">
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quotes">
+            <div class="container text-center">
+                <h3 class="dark-blue bold">Thoughts</h3>
+                <div class="row">
+                <div class="col-md-3 my-2 p_blessing">
+                    <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                    <blockquote class="blockquote">
+                    <p>Don’t turn away, Give today!.</p>
+                    <footer class="blockquote-footer">Payal Patel</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-3 my-2 p_blessing">
+                    <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                    <blockquote class="blockquote">
+                        <p>We can't help everyone, but everyone can help someone.</p>
+                        <footer class="blockquote-footer">Shreya Dalal</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-3 my-2 p_blessing">
+                        <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                        <blockquote class="blockquote">
+                        <p>For the happiness of others.</p>
+                        <footer class="blockquote-footer">Ashna Asrani</footer>
+                        </blockquote>                    
+                </div>
+                <div class="col-md-3 my-2 p_blessing">
+                    <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                    <blockquote class="blockquote">
+                    <p>Your charity is your power..</p>
+                    <footer class="blockquote-footer">Isha Kapadia</footer>
+                    </blockquote>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="bg-dark">
+            <div class="container text-white text-center py-5 justify-content-center">
+                <p class="lead">JOIN US TO KNOW WHERE TO DONATE AND FROM WHERE TO GET HELP</p>
+                <div class="row justify-content-center">
+                <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+                    <form action="" class="form-inline">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Your Email" name="" id="">
+                            <div class="input-group-append">
+                            <button class="btn btn-primary">Join Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </section>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<nav id="mainNav" class="nav navbar navbar-expand-md navbar-dark py-0 fixed-top p_nav">
+    <a href="/" class="navbar-brand">
+      <img src="/stylesheets/images/icons/donation.png" alt="Share4Care" class="p_mainlogo">
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar" >
+      <span class="navbar-toggler-icon">
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <% if(!currentUser) { %>
+                    <li class="nav-item">
+                        <a href="/users/login" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/users/register" class="nav-link">Register</a>
+                    </li>
+                <% } else {%>
+                    <li class="nav-item">
+                        <a href="/donate" class="nav-link">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/get" class="nav-link">Request</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/users/logout" class="nav-link">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/profile" class="nav-link"><%=currentUser.name%></a>
+                    </li>
+                <% } %>
+      </ul>
+    </div>
+  </nav>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="/stylesheets/images/NGO.jpg" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Le Catering</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="/stylesheets/images/Ngo_details.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">Helping urban Slums</h1><br>
+      <h5 class="w3-center">Tradition since 1889</h5>
+      <p class="w3-large">For Wycliffe Okumu Oliech, growing up in the Mathare slum meant facing a scarcity of resource and the knowledge that he had not received the education or skills needed to make him competitive in the job market.  Wycliffe has always been passionate about film and photography and had unsuccessfully launched his own photography company in 2014. Realizing that he needed more skills and training to turn his passion into a successful enterprise, Wycliffe joined SHOFCO’s employability training program in 2016.
+        “I had formed and registered a photography company in 2014 whose operation was on and off. [Through SHOFCO] I was trained on financial literacy, record keeping and the savings skills that helped me to refocus my view on my business. It was at the training where I learnt how to differentiate between my personal money and business money.”        
+    </div>
+  </div>
+  
+  <hr>
+  
+
+  <hr>
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contact</h1>    
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="btn btn-lg btn-outline-primary" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+</body>
+</html>

@@ -1,0 +1,103 @@
+<body class="a_bg">
+  <!-- <img src="/stylesheets/images/.jpg">  -->
+<nav id="mainNav" class="nav navbar navbar-expand-md navbar-dark py-0 fixed-top p_nav">
+        <a href="/" class="navbar-brand">
+          <img src="/stylesheets/images/icons/donation.png" alt="Share4Care" class="p_mainlogo">
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNavbar" >
+          <span class="navbar-toggler-icon">
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a href="/" class="nav-link">Home</a>
+              </li>
+              <% if(typeof currentUser != undefined) { %>
+                  <li class="nav-item">
+                      <a href="/users/login" class="nav-link">Login</a>
+                  </li>
+                  <li class="nav-item"> 
+                      <a href="/users/register" class="nav-link a_frm">Register</a>
+                  </li>
+              <% } else {%>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Donate</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Request</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/users/logout" class="nav-link">Logout</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link"><%=currentUser.name%></a>
+                  </li>
+              <% } %>
+          </ul>
+        </div>
+</nav>
+<br>
+<div class="row">
+        <div class="col-md-5 m-auto">
+          <div class="card card-body a_card">
+            <h1 class="text-center mb-3 a_frm " >
+              <!-- <i class="fas fa-user-plus" ></i>  -->
+              Register
+            </h1>
+            <% include ./partials/messages %>
+            <form action="/users/register" method="POST">
+              <div class="form-group">
+                <label for="name" class="a_frm">Name</label>
+                <input
+                  type="name"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  placeholder="Enter Name"
+                  value="<%= typeof name != 'undefined' ? name : '' %>"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email" class="a_frm">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Enter Email"
+                  value="<%= typeof email != 'undefined' ? email : '' %>"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password" class="a_frm">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Create Password"
+                  value="<%= typeof password != 'undefined' ? password : '' %>"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password2" class="a_frm">Confirm Password</label>
+                <input
+                  type="password"
+                  id="password2"
+                  name="password2"
+                  class="form-control"
+                  placeholder="Confirm Password"
+                  value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary btn-block " style="background-color: #D9B310;border: none;">
+                Register
+              </button>
+            </form>
+            <p class="lead mt-4 a_frm">Have An Account? <a href="/users/login" class="a_frm a_hov">Login</a></p>
+          </div>
+        </div>
+      </div>
+      
+    </body>
