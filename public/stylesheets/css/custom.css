@@ -1,0 +1,163 @@
+.p_nav {
+    background-color: #59595f;
+    height: 15%;
+    font-weight: bold;
+    position: relative;
+}
+
+.p_nav .navbar-nav .nav-link:hover {
+    color: #D9B310;
+}
+
+.btn {
+    background-color: #D9B310;
+    border-color: #D9B310;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.btn:hover {
+    background-color: #0B3C5D;
+    border-color: #0B3C5D;
+    color: white;
+    font-weight: bold;
+}
+
+.p_display {
+    margin-bottom: 5%;
+}
+
+.things img {
+    width: 60%;
+    height: auto;
+    margin-bottom: 5%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.dark-blue {
+    color: #0B3C5D;
+}
+
+.blue {
+    color : #328CC1;
+}
+
+.p_blpessing {
+    background-color: #D9B310;
+    opacity: 0.4;
+    color: black;
+}
+
+.p_mainlogo {
+    width: 40%;
+    margin-left: 20%;
+}
+
+.sh_btn{
+  background-color: white;
+  color: #D9B310;
+  border: 3px solid #D9B310;    
+}
+
+.sh_btn:hover{
+  background-color: #D9B310;
+  color: white;    
+  border: 3px solid white;
+  border-radius: 100px;
+}
+
+.sh_txt:hover{    
+  color: #1D2731;
+  border: 3px solid #0B3C5D;
+  border-radius: 100px;
+}
+
+.sh_donate_background{
+  background-image: url('/stylesheets/images/donate.png');    
+  background-repeat: repeat;
+  background-size: 100%;        
+}
+
+.sh_get_background{
+  background-image: url('/stylesheets/images/get.jpg');    
+  background-repeat: repeat;
+  background-size: 100%;        
+}
+
+.sh_card_donate{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: rgba(233,200,147, 0.5);
+      background-clip: border-box;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.25rem; 
+}
+
+.sh_card_get{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: rgba(50,140,193, 0.3);
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem; 
+}
+
+  .a_hov:hover {
+    color: black;
+    text-decoration: none; 
+    font-weight: 10000px;
+   }
+   .a_btnClr{
+     background-color: #D9B310;
+   }
+   .a_bg{
+    background-image: url('/stylesheets/images/ngo2.jpg');
+    background-repeat: repeat;
+    background-size: 100%;
+  
+   }
+   .a_frm{
+    color:white;
+   }
+   .a_card {
+    background-color: rgba(0,0,0, 0.5);
+   }
+
+  
+
+   .dashboard_div {
+    height: 650px;
+  }
+  
+  .moments {
+    background-color: #0B3C5D;
+  }
+  
+  .moments_title {
+    color: white;
+    margin: 0 20%;
+    padding-bottom: 7px;
+    border-bottom: 5px solid #D9B310;
+    font-weight: bold;
+  }
+  .p_card {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+ /*
+ Prussian blue #0B3C5D
+Sky blue #328CC1
+GOLD LEAF #D9B310
+IVORY BLACK #1D2731
+*/
